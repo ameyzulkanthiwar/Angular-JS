@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+        <h1 style="color: #00b3ee" ng-controller="ctrl_one" ng-bind="var_one"></h1>
+        <h1 style="color: red" ng-controller="ctrl_two" ng-bind="var_two"></h1>
+
+        <script src="bower_components/angular/angular.min.js"></script>
+
+        <script>
+            var app = angular.module("app",[]);
+
+            app.value("my_service","first_value he he");
+            app.value("my_service","second_value he he");
+            <!--over writing is possible thats why o/p is second_value he he     -->
+
+
+            <!-- implimantation of controler one -->
+            app.controller("ctrl_one",ctrl_one);
+            function ctrl_one($scope,my_service) {
+                $scope.var_one = my_service;
+            }
+
+            <!-- implimantation of controler two -->
+            app.controller("ctrl_two",ctrl_two);
+            function ctrl_two($scope,my_service) {
+                $scope.var_two = my_service;
+            }
+
+
+        </script>
+</html>

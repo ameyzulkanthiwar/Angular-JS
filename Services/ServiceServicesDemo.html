@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+
+    <h1 style="color: #00b3ee" ng-controller="ctrl_one" ng-bind="var_one"></h1>
+    <h1 style="color: #0f0f0f" ng-controller="ctrl_two" ng-bind="var_two"></h1>
+
+    <script src="bower_component/angular/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+
+        var app = angular.module("app",[]);
+
+        app.service("my_service",my_service);
+        function my_service() {
+
+            this.fun_one = function () {
+                return "this is from service to function one...... ";
+            }
+
+            this.fun_two = function () {
+                return "this is from services to function two";
+            }
+        }
+
+        app.controller("ctrl_one",ctrl_one);
+        function ctrl_one($scope,my_service) {
+            $scope.var_one = my_service.fun_one();
+        }
+
+
+
+        app.controller("ctrl_two",ctrl_two);
+        function ctrl_two($scope,my_service) {
+            $scope.var_two = my_service.fun_two();
+        }
+
+
+    </script>
+
+
+</html>
