@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <!-- Adding the angular framework -->
+</head>
+<body>
+    <div>
+            <input type="number" ng-model="n1" min="0"><p>+</p><input type="number" ng-model="n2" min="0">
+            <!--ng-module is used to get the data from the above text column and put it into the bellow {{name}}-->
+            <h1>Addition of two Number is {{n1 + n2}}</h1>
+            <!-- instad of ng-bind we are using {{}} -->
+    </div>
+</body>
+</html>

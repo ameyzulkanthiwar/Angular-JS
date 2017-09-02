@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter | Example</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
+</head>
+<body>
+    <div>
+    What ever you will type it will apare in the Upercase<br>
+    Enter Ynte Name: <input type="text" ng-model="nameCap"><br>
+    Welcome {{nameCap | uppercase}} <br><br>
+    </div>
+    <div>
+        What ever you will type it will apare in the Lowercase<br>
+        Enter Ynte Name: <input type="text" ng-model="nameLow"><br>
+        Welcome {{nameLow | lowercase}} <br><br>
+    </div>
+</body>
+</html>

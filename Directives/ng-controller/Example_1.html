@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app" ng-controller="ctrl">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Controller example </title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
 </head>
 <body>
+<div>
+    select your favrite lunguage: <button ng-click="php()">php</button>
+    <button ng-click="ajs()">angularJs</button>
+    <button ng-click="jse()">Java Standerd Edition</button>
+    <button ng-click="sql()">Oracle(sql/plsql)</button>
+    <!-- here php(), ajs(), jse(), sql() are function-->
+    <p>You have selected {{favrite}} as your favrite language </p>
+</div>
+
+<script>
+    var app = angular.module("app",[]);
+
+    app.controller("ctrl",ctrl);
+    function ctrl($scope) {
+        $scope.favrite = 'None' ;
+
+        <!-- on php() function this should happen -->
+        <!-- on php button click the value of favrite will be php -->
+        $scope.php = function () {
+            $scope.favrite = 'php';
+        }
+
+        <!-- on ajs() function this should happen -->
+        <!-- on angularJS button click the value of "favrite" will be AngularJS -->
+        $scope.ajs = function () {
+            $scope.favrite='AngularJS';
+        }
+
+        <!-- on jse() function this should happen -->
+        <!-- on Java Standerd Edition button click the value of "favrite" will be Java Standerd Edition -->
+        $scope.jse = function () {
+            $scope.favrite = 'Java Standerd Edition';
+        }
+
+        <!-- on sql() function this should happen -->
+        <!-- on Oracle(sql/plsql) button click the value of "favrite" will be Oracle(sql/plsql) -->
+        $scope.sql = function () {
+            $scope.favrite='Oracle(sql/plsql)';
+        }
+    }
+</script>
 
 </body>
 </html>

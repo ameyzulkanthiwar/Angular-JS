@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-repet</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+</head>
+<body>
+    <!-- here in MyFavLan contain array of json object -->
+    <div ng-init="MyFevLan=[{name:'php',extention:'.php'},
+                            {name:'Java',extention:'.java'},
+                            {name:'javaScript',extention:'.js'},
+                            {name:'c',extention:'.c'}]">
+        <p ng-repeat="language in MyFevLan">
+            <!-- here you van say that language is local variable-->
+            <!-- ng-repeat is used when we want repetative process like in other programing lunguage we use for loop-->
+            Language Name: {{language.name}}<br>
+            Language Extention: {{language.extention}}<br>
+        </p>
+
+    </div>
+</body>
+</html>
